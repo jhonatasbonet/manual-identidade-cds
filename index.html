@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Manual de Identidade Visual Digital - CDS Corretor de Imóveis</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;800&family=Crimson+Text:ital@1&display=swap');
@@ -11,6 +11,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
@@ -18,6 +19,7 @@
             line-height: 1.6;
             color: #333;
             background-color: #f5f5f5;
+            overflow-x: hidden;
         }
 
         .container {
@@ -57,7 +59,7 @@
             opacity: 0.9;
         }
 
-        /* Navigation */
+        /* Navigation Desktop */
         .nav {
             background-color: #1B365D;
             padding: 0;
@@ -88,6 +90,30 @@
         }
 
         .nav a:hover {
+            background-color: #10B981;
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            background-color: #1B365D;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 50px;
+            height: 50px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-nav-toggle.active {
             background-color: #10B981;
         }
 
@@ -1021,6 +1047,7 @@
         .comparison-table {
             overflow-x: auto;
             margin: 30px 0;
+            -webkit-overflow-scrolling: touch;
         }
 
         .comparison-table table {
@@ -1030,6 +1057,7 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             border-radius: 12px;
             overflow: hidden;
+            min-width: 600px;
         }
 
         .comparison-table th {
@@ -1053,93 +1081,20 @@
             background-color: #f8f9fa;
         }
 
+        /* Table scroll indicator */
+        .table-scroll-hint {
+            display: none;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+
         /* Luxury Color Card Override */
         .luxury-section .color-card {
             background-color: #2D3748;
             color: #FAFAFA;
-        }
-
-        /* Print Styles */
-        @media print {
-            body {
-                background-color: white;
-            }
-
-            .container {
-                box-shadow: none;
-                max-width: 100%;
-            }
-
-            .nav {
-                display: none;
-            }
-
-            .section {
-                page-break-inside: avoid;
-            }
-
-            .color-card, .typography-card, .example-card, .philosophy-card {
-                page-break-inside: avoid;
-            }
-
-            .header {
-                background: #1B365D !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-
-            .advantages-card, .luxury-results-card, .modern-advantages-card {
-                page-break-inside: avoid;
-            }
-
-            .demo-card-classic, .demo-card-luxury, .demo-card-modern {
-                page-break-inside: avoid;
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 28px;
-            }
-
-            .header .subtitle {
-                font-size: 18px;
-            }
-
-            .section {
-                padding: 40px 20px;
-            }
-
-            .color-display {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .color-box {
-                width: 100%;
-                height: 80px;
-            }
-
-            .nav ul {
-                flex-direction: column;
-            }
-
-            .nav a {
-                padding: 15px 20px;
-            }
-
-            .philosophy-card {
-                padding: 25px;
-            }
-
-            .advantages-grid, .modern-advantages-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .luxury-principles {
-                grid-template-columns: 1fr;
-            }
         }
 
         /* Footer */
@@ -1175,7 +1130,431 @@
             box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
         }
 
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            /* Hide desktop nav */
+            .nav {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(27, 54, 93, 0.98);
+                z-index: 1000;
+                padding-top: 80px;
+            }
+
+            .nav.active {
+                display: block;
+            }
+
+            .nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav a {
+                padding: 20px;
+                font-size: 18px;
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            /* Show mobile nav toggle */
+            .mobile-nav-toggle {
+                display: flex;
+            }
+
+            /* Header adjustments */
+            .header {
+                padding: 40px 20px;
+            }
+
+            .header h1 {
+                font-size: 28px;
+                letter-spacing: 1px;
+            }
+
+            .header .subtitle {
+                font-size: 18px;
+            }
+
+            .header .proposals {
+                font-size: 16px;
+            }
+
+            /* Section adjustments */
+            .section {
+                padding: 40px 20px;
+            }
+
+            .section-title {
+                font-size: 24px;
+                flex-wrap: wrap;
+            }
+
+            .section-title .emoji {
+                font-size: 28px;
+            }
+
+            /* Executive summary */
+            .executive-summary {
+                padding: 20px;
+            }
+
+            .executive-summary p {
+                font-size: 16px;
+            }
+
+            .proposal-list {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            /* Demo cards */
+            .demo-card-classic,
+            .demo-card-luxury,
+            .demo-card-modern {
+                padding: 25px;
+                margin: 20px 0;
+            }
+
+            .demo-card-classic h4,
+            .demo-card-modern h4 {
+                font-size: 18px;
+            }
+
+            .demo-card-luxury h4 {
+                font-size: 22px;
+                letter-spacing: 0.1em;
+            }
+
+            .demo-card-classic p,
+            .demo-card-luxury p,
+            .demo-card-modern p {
+                font-size: 14px;
+            }
+
+            .demo-card-classic .demo-button,
+            .demo-card-modern .demo-button {
+                padding: 12px 25px;
+                font-size: 14px;
+            }
+
+            .demo-card-luxury .demo-button {
+                padding: 12px 30px;
+                font-size: 12px;
+            }
+
+            /* Philosophy cards */
+            .philosophy-card {
+                padding: 25px;
+            }
+
+            .philosophy-card h3 {
+                font-size: 22px;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .philosophy-card .archetype-icon {
+                margin-bottom: 15px;
+            }
+
+            .philosophy-section h4 {
+                font-size: 18px;
+            }
+
+            .philosophy-quote {
+                padding: 15px 20px;
+                font-size: 14px;
+            }
+
+            /* Voice tone cards */
+            .voice-tone-card {
+                padding: 25px;
+            }
+
+            .voice-tone-card h3 {
+                font-size: 20px;
+                flex-wrap: wrap;
+            }
+
+            .voice-section {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+
+            .voice-section h4 {
+                font-size: 16px;
+            }
+
+            .voice-example {
+                padding: 12px;
+                font-size: 14px;
+            }
+
+            .voice-context {
+                font-size: 12px;
+            }
+
+            /* Advantages cards */
+            .advantages-card,
+            .modern-advantages-card {
+                padding: 25px;
+            }
+
+            .advantages-card h3,
+            .modern-advantages-card h3 {
+                font-size: 20px;
+            }
+
+            .advantages-grid,
+            .modern-advantages-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .advantages-section,
+            .modern-advantage-item {
+                padding: 20px;
+            }
+
+            .advantages-section h4,
+            .modern-advantage-item h4 {
+                font-size: 16px;
+            }
+
+            /* Color cards */
+            .color-card {
+                padding: 20px;
+            }
+
+            .color-card h3 {
+                font-size: 20px;
+            }
+
+            .color-display {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .color-box {
+                width: 100%;
+                height: 80px;
+            }
+
+            .color-info .hex {
+                font-size: 18px;
+            }
+
+            .color-specs {
+                grid-template-columns: 1fr;
+                font-size: 12px;
+            }
+
+            .color-description {
+                font-size: 14px;
+            }
+
+            .color-applications {
+                padding: 12px;
+            }
+
+            .color-applications li {
+                font-size: 12px;
+            }
+
+            /* Typography cards */
+            .typography-card {
+                padding: 20px;
+            }
+
+            .font-family h4 {
+                font-size: 18px;
+            }
+
+            .font-sample {
+                padding: 15px;
+            }
+
+            .font-sample .example {
+                font-size: 16px !important;
+            }
+
+            .font-sample .usage {
+                font-size: 12px;
+            }
+
+            /* Example cards */
+            .example-card {
+                padding: 20px;
+            }
+
+            .example-card h4 {
+                font-size: 18px;
+            }
+
+            .example-item {
+                padding: 15px;
+            }
+
+            .example-item ul li {
+                font-size: 14px;
+            }
+
+            /* Luxury specific mobile */
+            .luxury-results-card {
+                padding: 25px;
+            }
+
+            .luxury-results-card h3 {
+                font-size: 24px;
+                letter-spacing: 0.1em;
+            }
+
+            .luxury-results-section {
+                padding: 20px;
+            }
+
+            .luxury-results-section h4 {
+                font-size: 20px;
+            }
+
+            .luxury-philosophy-central {
+                padding: 25px;
+            }
+
+            .luxury-philosophy-central h3 {
+                font-size: 24px;
+                letter-spacing: 0.1em;
+            }
+
+            .luxury-philosophy-central p {
+                font-size: 16px;
+            }
+
+            .luxury-principles {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            /* Tables */
+            .comparison-table {
+                margin: 20px -20px;
+                padding: 0 20px;
+            }
+
+            .table-scroll-hint {
+                display: block;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 15px;
+                font-size: 14px;
+            }
+
+            /* Footer */
+            .footer {
+                padding: 30px 20px;
+            }
+
+            .footer p {
+                font-size: 14px;
+            }
+
+            /* PDF button */
+            .pdf-button {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+
+            /* Font size adjustments for luxury mobile */
+            .luxury-section .font-sample .example {
+                font-size: 24px !important;
+            }
+
+            /* Modern font adjustments */
+            .modern-section .font-sample .example {
+                font-size: 20px !important;
+            }
+        }
+
+        /* Small mobile adjustments */
+        @media (max-width: 375px) {
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .header .subtitle {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .demo-card-classic h4,
+            .demo-card-modern h4 {
+                font-size: 16px;
+            }
+
+            .demo-card-luxury h4 {
+                font-size: 18px;
+            }
+
+            .philosophy-card h3 {
+                font-size: 18px;
+            }
+
+            .voice-tone-card h3 {
+                font-size: 18px;
+            }
+        }
+
+        /* Print styles remain the same */
         @media print {
+            body {
+                background-color: white;
+            }
+
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+
+            .nav,
+            .mobile-nav-toggle {
+                display: none !important;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            .color-card, .typography-card, .example-card, .philosophy-card {
+                page-break-inside: avoid;
+            }
+
+            .header {
+                background: #1B365D !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .advantages-card, .luxury-results-card, .modern-advantages-card {
+                page-break-inside: avoid;
+            }
+
+            .demo-card-classic, .demo-card-luxury, .demo-card-modern {
+                page-break-inside: avoid;
+            }
+
             .pdf-button {
                 display: none;
             }
@@ -1184,6 +1563,11 @@
 </head>
 <body>
     <div class="container">
+        <!-- Mobile Navigation Toggle -->
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Menu">
+            <span>☰</span>
+        </button>
+
         <!-- Header -->
         <header class="header">
             <h1>Manual de Identidade Visual Digital</h1>
@@ -1192,7 +1576,7 @@
         </header>
 
         <!-- Navigation -->
-        <nav class="nav">
+        <nav class="nav" id="navigation">
             <ul>
                 <li><a href="#sumario">Sumário</a></li>
                 <li><a href="#classica">Versão Clássica</a></li>
@@ -2295,6 +2679,7 @@
             <h3 style="font-size: 24px; margin: 30px 0 20px; color: #1B365D;">Cards de Propriedades - Análise Detalhada</h3>
 
             <div class="comparison-table">
+                <div class="table-scroll-hint">← Arraste para ver mais →</div>
                 <table>
                     <thead>
                         <tr>
@@ -2342,6 +2727,7 @@
             <h3 style="font-size: 24px; margin: 30px 0 20px; color: #1B365D;">Formulários de Busca - Análise Detalhada</h3>
 
             <div class="comparison-table">
+                <div class="table-scroll-hint">← Arraste para ver mais →</div>
                 <table>
                     <thead>
                         <tr>
@@ -2480,6 +2866,7 @@
             <h3 style="font-size: 24px; margin: 30px 0 20px; color: #1B365D;">KPIs por Versão</h3>
 
             <div class="comparison-table">
+                <div class="table-scroll-hint">← Arraste para ver mais →</div>
                 <table>
                     <thead>
                         <tr>
@@ -2490,7 +2877,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                                              <tr>
                             <td><strong>Tempo Médio de Sessão</strong></td>
                             <td>8-12 min</td>
                             <td>4-6 min</td>
@@ -2548,25 +2935,154 @@
     <a href="javascript:window.print()" class="pdf-button">💾 Salvar em PDF</a>
 
     <script>
+        // Mobile Navigation Toggle
+        const mobileNavToggle = document.getElementById('mobileNavToggle');
+        const navigation = document.getElementById('navigation');
+
+        mobileNavToggle.addEventListener('click', function() {
+            navigation.classList.toggle('active');
+            mobileNavToggle.classList.toggle('active');
+
+            // Change icon
+            if (navigation.classList.contains('active')) {
+                mobileNavToggle.innerHTML = '<span>✕</span>';
+            } else {
+                mobileNavToggle.innerHTML = '<span>☰</span>';
+            }
+        });
+
         // Smooth scroll for navigation
         document.querySelectorAll('.nav a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
+
+                // Close mobile menu if open
+                navigation.classList.remove('active');
+                mobileNavToggle.classList.remove('active');
+                mobileNavToggle.innerHTML = '<span>☰</span>';
+
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    // Account for sticky nav height
+                    const navHeight = window.innerWidth <= 768 ? 80 : 60;
+                    const targetPosition = target.offsetTop - navHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
                     });
                 }
             });
         });
 
+        // PDF Save functionality
         document.querySelector('.pdf-button').addEventListener('click', function(e) {
             e.preventDefault();
-            alert('Para salvar em PDF:\n\n1. Na janela de impressão que será aberta\n2. Selecione "Salvar como PDF" como destino\n3. Clique em "Salvar"\n\nO design será mantido no PDF!');
+
+            // Mobile-specific message
+            if (window.innerWidth <= 768) {
+                alert('Para salvar em PDF no mobile:\n\n1. Use o menu do navegador (⋮ ou ⋯)\n2. Selecione "Compartilhar" ou "Imprimir"\n3. Escolha "Salvar como PDF"\n\nOu acesse este manual em um computador para melhor experiência de impressão.');
+            } else {
+                alert('Para salvar em PDF:\n\n1. Na janela de impressão que será aberta\n2. Selecione "Salvar como PDF" como destino\n3. Clique em "Salvar"\n\nO design será mantido no PDF!');
+            }
             window.print();
         });
+
+        // Add touch swipe support for tables
+        const tables = document.querySelectorAll('.comparison-table');
+        tables.forEach(table => {
+            let startX = 0;
+            let scrollLeft = 0;
+            let isDown = false;
+
+            table.addEventListener('touchstart', e => {
+                isDown = true;
+                startX = e.touches[0].pageX - table.offsetLeft;
+                scrollLeft = table.scrollLeft;
+            });
+
+            table.addEventListener('touchmove', e => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.touches[0].pageX - table.offsetLeft;
+                const walk = (x - startX) * 2;
+                table.scrollLeft = scrollLeft - walk;
+            });
+
+            table.addEventListener('touchend', () => {
+                isDown = false;
+            });
+        });
+
+        // Prevent horizontal scroll on body
+        document.body.addEventListener('touchmove', function(e) {
+            if (e.target.closest('.comparison-table')) {
+                return;
+            }
+        }, { passive: false });
+
+        // Adjust font sizes for very small screens
+        function adjustFontSizes() {
+            const viewportWidth = window.innerWidth;
+
+            if (viewportWidth < 375) {
+                document.documentElement.style.fontSize = '14px';
+            } else if (viewportWidth < 414) {
+                document.documentElement.style.fontSize = '15px';
+            } else {
+                document.documentElement.style.fontSize = '16px';
+            }
+        }
+
+        // Call on load and resize
+        adjustFontSizes();
+        window.addEventListener('resize', adjustFontSizes);
+
+        // Prevent zoom on double tap for iOS
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+
+        // Add viewport height fix for mobile browsers
+        function setViewportHeight() {
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        setViewportHeight();
+        window.addEventListener('resize', setViewportHeight);
+
+        // Lazy loading for images (if any are added later)
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img.lazy').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Performance monitoring
+        if ('performance' in window) {
+            window.addEventListener('load', () => {
+                const perfData = window.performance.timing;
+                const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+                console.log(`Page load time: ${pageLoadTime}ms`);
+            });
+        }
     </script>
 </body>
 </html>
