@@ -406,6 +406,116 @@
             color: #4A5568;
         }
 
+        /* Tom de Voz Cards */
+        .voice-tone-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 35px;
+            margin-bottom: 30px;
+        }
+
+        .voice-tone-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 24px;
+            color: #1B365D;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .voice-section {
+            margin-bottom: 30px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 3px solid #10B981;
+        }
+
+        .voice-section h4 {
+            font-size: 18px;
+            color: #1B365D;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .voice-example {
+            background-color: white;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-style: italic;
+            color: #4A5568;
+            border: 1px solid #e0e0e0;
+        }
+
+        .voice-context {
+            font-size: 13px;
+            color: #10B981;
+            font-weight: 600;
+            margin-top: 5px;
+            font-style: normal;
+        }
+
+        /* Versão Clássica Tom de Voz */
+        .classic-voice-section {
+            border-left-color: #1B365D;
+        }
+
+        .classic-voice-example {
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            color: #333;
+        }
+
+        /* Versão Luxury Tom de Voz */
+        .luxury-voice-card {
+            background: linear-gradient(135deg, #2D3748 0%, #1F2937 100%);
+            color: #FAFAFA;
+        }
+
+        .luxury-voice-card h3 {
+            color: #F59E0B;
+        }
+
+        .luxury-voice-section {
+            background-color: rgba(250, 250, 250, 0.05);
+            border-left-color: #F59E0B;
+        }
+
+        .luxury-voice-section h4 {
+            color: #F59E0B;
+        }
+
+        .luxury-voice-example {
+            background-color: rgba(250, 250, 250, 0.08);
+            border-color: rgba(245, 158, 11, 0.3);
+            font-family: 'Crimson Text', serif;
+            font-style: italic;
+            color: #E2E8F0;
+        }
+
+        .luxury-voice-context {
+            color: #F59E0B;
+        }
+
+        /* Versão Moderna Tom de Voz */
+        .modern-voice-section {
+            border-left-color: #10B981;
+        }
+
+        .modern-voice-example {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .modern-voice-context {
+            color: #10B981;
+        }
+
         /* Advantages Cards - Classica */
         .advantages-card {
             background-color: white;
@@ -1384,6 +1494,77 @@
                     </ul>
                 </div>
             </div>
+
+            <!-- Tom de Voz - Clássica -->
+            <h3 style="font-size: 24px; margin: 30px 0 20px; color: #1B365D;">Tom de Voz e Exemplos de Copy - CLÁSSICA</h3>
+            <div class="voice-tone-card">
+                <h3>
+                    <span style="font-size: 24px;">📝</span>
+                    Diretrizes de Comunicação
+                </h3>
+
+                <div class="voice-section classic-voice-section">
+                    <h4>Homepage - Headline Principal</h4>
+                    <div class="voice-example classic-voice-example">
+                        "HÁ 15 ANOS REALIZANDO O SONHO DA CASA PRÓPRIA COM SEGURANÇA E TRANSPARÊNCIA"
+                    </div>
+                    <div class="voice-context">Contexto: Banner principal - Tom confiável e estabelecido</div>
+                </div>
+
+                <div class="voice-section classic-voice-section">
+                    <h4>Call-to-Action Primário</h4>
+                    <div class="voice-example classic-voice-example">
+                        "AGENDE SUA VISITA HOJE MESMO"
+                    </div>
+                    <div class="voice-context">Contexto: Botões de conversão - Direto e imperativo</div>
+                </div>
+
+                <div class="voice-section classic-voice-section">
+                    <h4>Descrição de Serviços</h4>
+                    <div class="voice-example classic-voice-example">
+                        "Nossa equipe de corretores certificados oferece atendimento personalizado em todas as etapas da negociação. Desde a primeira visita até a entrega das chaves, cuidamos de toda a documentação com rigor e profissionalismo."
+                    </div>
+                    <div class="voice-context">Contexto: Página "Sobre Nós" - Formal e detalhado</div>
+                </div>
+
+                <div class="voice-section classic-voice-section">
+                    <h4>Card de Imóvel</h4>
+                    <div class="voice-example classic-voice-example">
+                        "CASA TÉRREA - JARDIM PRIMAVERA<br>
+                        3 dormitórios | 2 vagas | 180m²<br>
+                        Valor: R$ 650.000,00<br>
+                        Documentação 100% regularizada"
+                    </div>
+                    <div class="voice-context">Contexto: Listagem de imóveis - Informações completas e organizadas</div>
+                </div>
+
+                <div class="voice-section classic-voice-section">
+                    <h4>Mensagem de Confiança</h4>
+                    <div class="voice-example classic-voice-example">
+                        "CRECI: 12.345-J | Associado COFECI | Membro da Associação dos Corretores de Imóveis do Estado"
+                    </div>
+                    <div class="voice-context">Contexto: Rodapé - Credenciais e certificações</div>
+                </div>
+
+                <div class="voice-section classic-voice-section">
+                    <h4>Formulário de Contato</h4>
+                    <div class="voice-example classic-voice-example">
+                        "Preencha o formulário abaixo e entraremos em contato em até 24 horas úteis. Todos os campos marcados com (*) são obrigatórios."
+                    </div>
+                    <div class="voice-context">Contexto: Instruções de formulário - Claro e protocolar</div>
+                </div>
+
+                <div class="voice-section classic-voice-section">
+                    <h4>Garantias e Segurança</h4>
+                    <div class="voice-example classic-voice-example">
+                        "✓ Análise completa da documentação<br>
+                        ✓ Acompanhamento jurídico especializado<br>
+                        ✓ Garantia de negociação segura<br>
+                        ✓ Suporte até 60 dias após a venda"
+                    </div>
+                    <div class="voice-context">Contexto: Seção de benefícios - Lista objetiva de garantias</div>
+                </div>
+            </div>
         </section>
 
         <!-- Versão Luxury -->
@@ -1650,6 +1831,77 @@
                         <li style="padding: 5px 0;">• Localização em Crimson Text Italic 18px Dourado Suave</li>
                         <li style="padding: 5px 0;">• Sem preço visível - apenas "Consulte-nos"</li>
                     </ul>
+                </div>
+            </div>
+
+            <!-- Tom de Voz - Luxury -->
+            <h3 style="font-size: 24px; margin: 30px 0 20px; color: #F59E0B;">Tom de Voz e Exemplos de Copy - LUXURY</h3>
+            <div class="voice-tone-card luxury-voice-card">
+                <h3>
+                    <span style="font-size: 24px;">✨</span>
+                    Arte da Comunicação Premium
+                </h3>
+
+                <div class="voice-section luxury-voice-section">
+                    <h4>Homepage - Manifesto de Abertura</h4>
+                    <div class="voice-example luxury-voice-example">
+                        "Onde o luxo encontra o extraordinário.<br>
+                        Uma curadoria exclusiva de residências que transcendem o conceito tradicional de moradia."
+                    </div>
+                    <div class="voice-context luxury-voice-context">Contexto: Hero section - Tom aspiracional e poético</div>
+                </div>
+
+                <div class="voice-section luxury-voice-section">
+                    <h4>Call-to-Action Premium</h4>
+                    <div class="voice-example luxury-voice-example">
+                        "Agende sua experiência privada"
+                    </div>
+                    <div class="voice-context luxury-voice-context">Contexto: Botão principal - Exclusividade sutil</div>
+                </div>
+
+                <div class="voice-section luxury-voice-section">
+                    <h4>Descrição de Propriedade</h4>
+                    <div class="voice-example luxury-voice-example">
+                        "Uma obra-prima arquitetônica que redefine os padrões de excelência. Cada ambiente foi meticulosamente concebido para proporcionar uma experiência sensorial única, onde a luz natural dança através de amplas janelas, criando uma sinfonia visual incomparável."
+                    </div>
+                    <div class="voice-context luxury-voice-context">Contexto: Detalhes do imóvel - Narrativa envolvente e sensorial</div>
+                </div>
+
+                <div class="voice-section luxury-voice-section">
+                    <h4>Localização Premium</h4>
+                    <div class="voice-example luxury-voice-example">
+                        "Jardins | O epicentro da sofisticação paulistana"
+                    </div>
+                    <div class="voice-context luxury-voice-context">Contexto: Badge de localização - Minimalista e impactante</div>
+                </div>
+
+                <div class="voice-section luxury-voice-section">
+                    <h4>Convite à Descoberta</h4>
+                    <div class="voice-example luxury-voice-example">
+                        "Permita-nos revelar propriedades que poucos têm o privilégio de conhecer."
+                    </div>
+                    <div class="voice-context luxury-voice-context">Contexto: Seção de serviços exclusivos - Tom de curadoria pessoal</div>
+                </div>
+
+                <div class="voice-section luxury-voice-section">
+                    <h4>Processo de Aquisição</h4>
+                    <div class="voice-example luxury-voice-example">
+                        "Sua jornada conosco<br><br>
+                        Descoberta · Uma conversa íntima sobre suas aspirações<br>
+                        Curadoria · Seleção personalizada de propriedades extraordinárias<br>
+                        Experiência · Visitas privadas em horários exclusivos<br>
+                        Realização · Assessoria completa com discrição absoluta"
+                    </div>
+                    <div class="voice-context luxury-voice-context">Contexto: Timeline de serviços - Elegante e processual</div>
+                </div>
+
+                <div class="voice-section luxury-voice-section">
+                    <h4>Testemunho Refinado</h4>
+                    <div class="voice-example luxury-voice-example">
+                        "Uma experiência que transcendeu nossas expectativas mais elevadas. A atenção aos detalhes e o profundo entendimento de nossos desejos resultaram na descoberta de nossa residência dos sonhos."<br>
+                        <span style="font-size: 14px; color: #F59E0B;">— Família Monteiro, Morumbi</span>
+                    </div>
+                    <div class="voice-context luxury-voice-context">Contexto: Seção de depoimentos - Autenticidade sofisticada</div>
                 </div>
             </div>
         </section>
@@ -1931,6 +2183,104 @@
                         <li style="padding: 5px 0;">• Tooltip em Azul Naval com texto Off-White</li>
                         <li style="padding: 5px 0;">• Micro-animação de entrada após 3 segundos</li>
                     </ul>
+                </div>
+            </div>
+
+            <!-- Tom de Voz - Moderna -->
+            <h3 style="font-size: 24px; margin: 30px 0 20px; color: #1B365D;">Tom de Voz e Exemplos de Copy - MODERNA</h3>
+            <div class="voice-tone-card">
+                <h3>
+                    <span style="font-size: 24px;">🚀</span>
+                    Comunicação Dinâmica e Conectada
+                </h3>
+
+                <div class="voice-section modern-voice-section">
+                    <h4>Homepage - Hero Dinâmico</h4>
+                    <div class="voice-example modern-voice-example">
+                        "Transforme seu sonho em realidade 🏡<br>
+                        Encontre o imóvel perfeito com apenas alguns cliques!"
+                    </div>
+                    <div class="voice-context modern-voice-context">Contexto: Banner principal - Tom otimista e direto</div>
+                </div>
+
+                <div class="voice-section modern-voice-section">
+                    <h4>Call-to-Action Moderno</h4>
+                    <div class="voice-example modern-voice-example">
+                        "Começar minha busca →"
+                    </div>
+                    <div class="voice-context modern-voice-context">Contexto: Botão principal - Ação clara e convidativa</div>
+                </div>
+
+                <div class="voice-section modern-voice-section">
+                    <h4>Filtros de Busca</h4>
+                    <div class="voice-example modern-voice-example">
+                        "O que você procura? 🔍<br>
+                        • Apê compacto perto do metrô<br>
+                        • Casa com quintal para pets<br>
+                        • Studio para investimento<br>
+                        • Cobertura com vista incrível"
+                    </div>
+                    <div class="voice-context modern-voice-context">Contexto: Sugestões de busca - Linguagem casual e emojis estratégicos</div>
+                </div>
+
+                <div class="voice-section modern-voice-section">
+                    <h4>Card de Imóvel</h4>
+                    <div class="voice-example modern-voice-example">
+                        "OPORTUNIDADE! 💚<br>
+                        Apê dos sonhos no Vila Madalena<br>
+                        2 dorms | 65m² | 1 vaga<br>
+                        R$ 650 mil<br>
+                        ⚡ Tour virtual disponível"
+                    </div>
+                    <div class="voice-context modern-voice-context">Contexto: Listagem - Informações rápidas e badges chamativos</div>
+                </div>
+
+                <div class="voice-section modern-voice-section">
+                    <h4>Benefícios e Diferenciais</h4>
+                    <div class="voice-example modern-voice-example">
+                        "Por que escolher a CDS? 🌟<br><br>
+                        ✓ 98% dos clientes super satisfeitos<br>
+                        ✓ Resposta em menos de 2h no WhatsApp<br>
+                        ✓ Tour virtual 360° em todos os imóveis<br>
+                        ✓ Financiamento pré-aprovado na hora<br>
+                        ✓ Zero burocracia, 100% digital"
+                    </div>
+                    <div class="voice-context modern-voice-context">Contexto: Seção de vantagens - Dados concretos e tom confiante</div>
+                </div>
+
+                <div class="voice-section modern-voice-section">
+                    <h4>Notificação Push</h4>
+                    <div class="voice-example modern-voice-example">
+                        "🔥 Novo imóvel no seu bairro favorito!<br>
+                        Acabou de entrar: 3 dorms no Brooklin por R$ 890k<br>
+                        Ver agora"
+                    </div>
+                    <div class="voice-context modern-voice-context">Contexto: Alertas em tempo real - Urgência sem pressão</div>
+                </div>
+
+                <div class="voice-section modern-voice-section">
+                    <h4>Chat/WhatsApp</h4>
+                    <div class="voice-example modern-voice-example">
+                        "Oi! 👋 Sou a Ana da CDS<br>
+                        Vi que você curtiu o apê da Rua Augusta<br>
+                        Posso te ajudar com mais infos ou agendar uma visita?<br>
+                        Ah, temos tour virtual também! 📱"
+                    </div>
+                    <div class="voice-context modern-voice-context">Contexto: Mensagem inicial - Pessoal, amigável e proativa</div>
+                </div>
+
+                <div class="voice-section modern-voice-section">
+                    <h4>FAQ Moderno</h4>
+                    <div class="voice-example modern-voice-example">
+                        "Dúvidas? A gente resolve! 💬<br><br>
+                        <strong>Posso visitar online primeiro?</strong><br>
+                        Claro! Todos os nossos imóveis têm tour virtual 360°<br><br>
+                        <strong>Aceita cripto?</strong><br>
+                        Sim! Aceitamos Bitcoin, Ethereum e stablecoins<br><br>
+                        <strong>Tem alguma taxa escondida?</strong><br>
+                        Nunca! Transparência total é nossa vibe"
+                    </div>
+                    <div class="voice-context modern-voice-context">Contexto: Perguntas frequentes - Tom descontraído e transparente</div>
                 </div>
             </div>
         </section>
